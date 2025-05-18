@@ -1,7 +1,20 @@
-export function buildPrompt(diff: string, lang: string): string {
-  const prefix =
-    lang === "ko"
-      ? "아래는 코드 변경 diff입니다. 어떤 변경이 있었는지 요약하고, 명령형 커밋 메시지로 작성해주세요."
-      : "Here is a git diff. Summarize the change and write a commit message using imperative style.";
-  return `${prefix}\n\n\`\`\`diff\n${diff}\n\`\`\``;
+export function buildPrompt(diff: string, lang: "en" | "ko"): string {
+  const langNote = lang === "ko" ? "Write in Korean." : "Write in English.";
+
+  return `
+You are an AI that generates Conventional Commit messages.
+
+Task:
+- Read the following git diff.
+- Output ONLY a one-line commit message.
+- Use the Conventional Commits format (e.g., feat: ..., fix: ..., chore: ...).
+- ${langNote}
+- DO NOT explain the diff.
+- DO NOT include code blocks, markdown, or multiple lines.
+
+Here is the diff:
+\`\`\`diff
+${diff}
+\`\`\`
+`;
 }
