@@ -103,5 +103,5 @@ OLLAMA_MODEL = "mistral"
 ---
 ## 🧾 라이선스
 
-MIT © 2025 [moon0727]
+MIT © 2025 moon0727
 
