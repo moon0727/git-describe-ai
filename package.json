@@ -1,6 +1,6 @@
 {
   "name": "git-describe-ai",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Generate conventional commit messages from git diff using AI",
   "bin": {
     "git-describe-ai": "./dist/cli.js"
