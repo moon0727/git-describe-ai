@@ -1,15 +1,25 @@
 {
   "name": "git-describe-ai",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate conventional commit messages from git diff using AI",
+  "bin": {
+    "git-describe-ai": "dist/cli.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "cli",
+    "ollnpama",
+    "llm"
+  ],
+  "author": "mooni",
+  "license": "MIT",
   "dependencies": {
     "commander": "^13.1.0",
     "dotenv": "^16.5.0",
