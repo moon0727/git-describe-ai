@@ -1,6 +1,11 @@
 import { execa } from "execa";
 
-export async function getGitDiff(range: string): Promise<string> {
-  const { stdout } = await execa("git", ["diff", range]);
-  return stdout;
+export async function getGitDiff(): Promise<string> {
+  const staged = await execa("git", ["diff", "--cached"]);
+  if (staged.stdout.trim()) {
+    return staged.stdout;
+  }
+
+  const working = await execa("git", ["diff"]);
+  return working.stdout;
 }

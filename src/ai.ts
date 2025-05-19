@@ -3,7 +3,8 @@ import fetch from "node-fetch";
 
 export async function generateCommitMessage(
   diff: string,
-  lang: "en" | "ko"
+  lang: "en" | "ko",
+  withDescription = false
 ): Promise<string> {
   if (!diff.trim()) {
     console.log("No changes detected in the specified range.");
@@ -18,7 +19,7 @@ export async function generateCommitMessage(
     process.exit(1);
   }
 
-  const prompt = buildPrompt(diff, lang);
+  const prompt = buildPrompt(diff, lang, withDescription);
 
   const response = await fetch(OLLAMA_URL, {
     method: "POST",
