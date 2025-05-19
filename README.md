@@ -1,4 +1,5 @@
 # git-describe-ai
+[![npm version](https://img.shields.io/npm/v/git-describe-ai.svg)](https://www.npmjs.com/package/git-describe-ai)
 
 AI를 이용해 `git diff` 기반 커밋 메세지를 자동으로 생성해주는 CLI 도구입니다.
 Conventional Commits 형식의 커밋 메세지를 영어 또는 한국어로 생성할 수 있으며, 필요시 간단한 설명도 함께 포함됩니다.
